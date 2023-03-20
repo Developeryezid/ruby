@@ -1,0 +1,14 @@
+<%= simple_form_for(@User) do |u| %>
+    <%= u.error_notification %>
+    <%= u.error_notification message: u.object.errors[:base].to_sentence if u.object.errors[:base].present? %>
+  
+    <div class="form-inputs">
+      <%= u.input :identificacion %>
+      <%= u.input :nombre %>
+      <%= u.input :apellido %>
+    </div>
+  
+    <div class="form-actions">
+      <%= u.button :submit %>
+    </div>
+  <% end %>

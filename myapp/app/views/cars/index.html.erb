@@ -1,0 +1,28 @@
+  
+<h1>Lista de Carros</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.id %></td>
+        <td><%= car.placa %></td>
+        <td><%= car.color %></td>
+        <td><%= link_to 'Show', car %></td>
+        <td><%= link_to 'Edit', edit_car_path(car) %></td>
+        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Car', new_car_path %>

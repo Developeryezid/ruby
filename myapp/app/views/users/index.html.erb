@@ -1,0 +1,30 @@
+<h1>Lista de Personas</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @Users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.identificacion %></td>
+        <td><%= user.nombre %></td>
+        <td><%= user.apellido %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New user', new_user_path %>
