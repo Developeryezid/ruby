@@ -10,7 +10,7 @@ class CarsController < ApplicationController
         @car = Car.new
     end
     def edit
-        @Car = Car.find(params[:id])
+        @car = Car.find(params[:id])
     end
     def update
         @Car = Car.find(params[:id])
@@ -31,7 +31,7 @@ class CarsController < ApplicationController
     private
 
     def car_params
-        params.require(:car).permit(:placa, :color)
+        params.require(:car).permit(:placa, :color, :avatar)
     end
     
 end

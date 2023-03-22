@@ -1,8 +1,11 @@
-<h1>usuarios</h1>
+<h1>personas</h1>
+
 <strong>identificacion:</strong> <%= @User.identificacion %>
 <br>
 <strong>nombre:</strong> <%= @User.nombre %>
 <br>
 <strong>apellido:</strong> <%= @User.apellido %>
+<br>
+<%= image_tag(@User.avatar_url) if @User.avatar? %>
 <br>
 <%= link_to "Volver", users_path %>  

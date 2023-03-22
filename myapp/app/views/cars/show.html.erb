@@ -3,4 +3,6 @@
 <br>
 <strong>Color:</strong> <%= @car.color %>
 <br>
+<%= image_tag(@car.avatar_url) if @car.avatar? %>
+<br>
 <%= link_to "Volver", cars_path %>  
